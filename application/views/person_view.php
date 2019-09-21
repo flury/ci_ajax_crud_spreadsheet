@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ajax CRUD with Bootstrap modals and Datatables</title>
+    <title>Belajar Codeigniter menggunakan ajax dan spreadsheet</title>
     <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/datatables/css/dataTables.bootstrap.css')?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')?>" rel="stylesheet">
@@ -17,13 +17,14 @@
     </head> 
 <body>
     <div class="container">
-        <h1 style="font-size:20pt">Ajax CRUD with Bootstrap modals and Datatables with Server side Validation</h1>
+        <h1 style="font-size:20pt">Belajar Codeigniter menggunakan ajax dan spreadsheet</h1>
 
         <h3>Person Data</h3>
         <br />
         <button class="btn btn-success" onclick="add_person()"><i class="glyphicon glyphicon-plus"></i> Add Person</button>
         <button class="btn btn-default" onclick="reload_table()"><i class="glyphicon glyphicon-refresh"></i> Reload</button>
         <button class="btn btn-warning" onclick="export_table_excel()"><i class="glyphicon glyphicon-export"></i> Export To Excel</button>
+        <button class="btn btn-warning" onclick="export_table_pdf()"><i class="glyphicon glyphicon-export"></i> Export To PDF</button>
         <br />
         <br />
         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -115,6 +116,14 @@ $(document).ready(function() {
     });
 
 });
+
+function export_table_pdf()
+{
+	alert("export into pdf");
+    url = "<?php echo site_url('exportpdffile/ajax_pdf')?>";
+    window.open(url);
+}
+
 
 function export_table_excel()
 {
